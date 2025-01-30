@@ -2,27 +2,39 @@ a = input("a の値を入力: ")
 b = input("b の値を入力: ")
 
 # TODO
-a1 = int(a)
-b1 = int(b)
+#最大公約数(問3)
+def euclid(a, b):
 
-if a1 < b1:
-    k = a1
-    a1 = b1
-    b1 = k
+    if a < b:
+        a, b = b, a
 
-q = a1 // b1
-r = a1 % b1
-
-while r != 0:
-    q = a1 // b1
-    r = a1 % b1
-
-    if r == 0:
-        break
+    while b > 0:
+        a, b = b, a % b
     
-    a1 = b1
-    b1 = r
-    
-if r == 0:
-    print(b1)
-    
+    return a
+
+print(euclid(int(a), int(b)))
+
+
+#互いに素か判定(問4)
+def judge(a, b):
+    if euclid(a, b) == 1:
+        return True
+    else:
+        return False
+
+#エクストラ
+import random
+def p():   
+    sum = 0 #互いに素なときの数
+
+    for i in range(100000):
+        a = random.randrange(1, 10001)
+        b = random.randrange(1, 10001)
+
+        if judge(a, b) == True:
+            sum +=1
+
+    print(sum / 100000)
+
+p()
