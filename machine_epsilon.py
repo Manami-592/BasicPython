@@ -6,4 +6,4 @@ while ε > 0:
     else:
         break
 
-print(ε)
+print(ε * 2)
