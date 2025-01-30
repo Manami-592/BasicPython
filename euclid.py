@@ -25,3 +25,4 @@ while r != 0:
     
 if r == 0:
     print(b1)
+    

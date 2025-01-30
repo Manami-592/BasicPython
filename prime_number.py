@@ -9,8 +9,6 @@ for array in arrays:
 
     if array == 1:
         judge = False
-    elif array == 2:
-        judge = False
 
     k = array - 1
 
@@ -27,3 +25,4 @@ for array in arrays:
         print('{}は素数'.format(array))
     else:
         print('{}は素数でない'.format(array))
+        
