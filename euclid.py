@@ -18,10 +18,7 @@ print(euclid(int(a), int(b)))
 
 #互いに素か判定(問4)
 def judge(a, b):
-    if euclid(a, b) == 1:
-        return True
-    else:
-        return False
+    return euclid(a, b) == 1
 
 #エクストラ
 import random

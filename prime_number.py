@@ -6,10 +6,10 @@ def NumberJudge(n):
     digits = list(n) #小数でNone返す
     for digit in digits:
         if digit == '.':
-            return None
-
-    if int(n) <= 0: #0以下でNone返す
-        return None
+            raise TypeError('not integer')
+    
+    if int(n) <= 0:
+        raise ValueError('not natual number')
     elif int(n) == 1:
         return False 
 

@@ -25,5 +25,5 @@ def func3(x):
 
 
 print(function(sin, 0, math.pi / 2, 50))
-print(function(func2, 0, 1, 500))
+print(function(func2, 0, 1, 100))
 print(function(func3, -100, 100, 1000))
