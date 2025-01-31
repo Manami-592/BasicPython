@@ -2,27 +2,33 @@ a = input("aの値を入力: ")
 b = input("bの値を入力: ")
 
 # TODO
-arrays = [int(a), int(b)]
+def NumberJudge(n):
+    digits = list(n) #小数でNone返す
+    for digit in digits:
+        if digit == '.':
+            raise TypeError('not integer')
+    
+    if int(n) <= 0:
+        raise ValueError('not natual number')
+    elif int(n) == 1:
+        return False 
 
-for array in arrays:
+    k = int(n) - 1
     judge = True
-
-    if array == 1:
-        judge = False
-
-    k = array - 1
-
+    
     while judge:
         if k == 1:
             break
-        elif array % k == 0:
+        elif int(n) % k == 0:
             judge = False
             break
         else:
             k -= 1
+    
+    if not judge:
+        return False
+    return True
 
-    if judge:
-        print('{}は素数'.format(array))
-    else:
-        print('{}は素数でない'.format(array))
-        
+arrays = [a, b]
+for array in arrays:
+    print(NumberJudge(array))
